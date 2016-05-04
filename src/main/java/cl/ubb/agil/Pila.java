@@ -15,5 +15,9 @@ public class Pila {
 	public void agregar(int n){
 		tamanio++;
 	}
+	
+	public int pop(){
+		return 1;
+	}
 
 }

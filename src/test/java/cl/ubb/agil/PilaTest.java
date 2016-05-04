@@ -57,5 +57,14 @@ public class PilaTest {
 		/*Assert*/
 		assertThat(tam,is(2));
 	}
+	@Test
+	public void alAgregarunUnoYHacerPopDevuelveUnUno(){
+		stack = new Pila();
+		/*Act*/
+		stack.agregar(1);
+		int pop = stack.pop();
+		/*Assert*/
+		assertThat(pop,is(1));
+	}
 
 }
