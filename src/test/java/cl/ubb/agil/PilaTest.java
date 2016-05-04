@@ -66,5 +66,26 @@ public class PilaTest {
 		/*Assert*/
 		assertThat(pop,is(1));
 	}
-
+	@Test
+	public void alAgregarUnoYDosPopDevuelveDos(){
+		stack = new Pila();
+		/*Act*/
+		stack.agregar(1);
+		stack.agregar(2);
+		int pop = stack.pop();
+		/*Assert*/
+		assertThat(pop,is(2));
+	}
+	@Test
+	public void alAgregarTresYCuatroPopRetornaCuatroYTres(){
+		stack = new Pila();
+		/*Act*/
+		stack.agregar(3);
+		stack.agregar(4);
+		int pop = stack.pop();
+		int otroPop=stack.pop();
+		/*Assert*/
+		assertThat(pop,is(4));
+		assertThat(otroPop,is(3));
+	}
 }
