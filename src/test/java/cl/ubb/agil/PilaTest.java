@@ -1,16 +1,25 @@
 package cl.ubb.agil;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class PilaTest {
 	
+	private Pila stack;
+	@Before
+	public void setup(){
+		
+	}
+	
 	@Test
 	public void laPilaEstaVacia(){
 		/*Arrange*/
-		Pila stack = new Pila();
+		stack = new Pila();
 		/*Act*/
 		boolean correcto = stack.estaVacia();
 		/*Assert*/
@@ -20,7 +29,7 @@ public class PilaTest {
 	@Test
 	public void alAgregarElNumeroUnoLaPilaNoEstaVacia(){
 		/*Arrange*/
-		Pila stack = new Pila();
+		stack = new Pila();
 		/*Act*/
 		stack.agregar(1);
 		boolean correcto = stack.estaVacia();
@@ -30,13 +39,23 @@ public class PilaTest {
 	@Test
 	public void alAgregarUnoYDosLaPilaNoEstaVacia(){
 		/*Arrange*/
-		Pila stack = new Pila();
+		stack = new Pila();
 		/*Act*/
 		stack.agregar(1);
 		stack.agregar(2);
 		boolean correcto = stack.estaVacia();
 		/*Assert*/
 		assertFalse(correcto);
+	}
+	@Test
+	public void alAgregarUnoYDosElTamnioDeLaPilaEsDos(){
+		stack = new Pila();
+		/*Act*/
+		stack.agregar(1);
+		stack.agregar(2);
+		int tam = stack.tamanio;
+		/*Assert*/
+		assertThat(tam,is(2));
 	}
 
 }
