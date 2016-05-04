@@ -27,5 +27,16 @@ public class PilaTest {
 		/*Assert*/
 		assertFalse(correcto);
 	}
+	@Test
+	public void alAgregarUnoYDosLaPilaNoEstaVacia(){
+		/*Arrange*/
+		Pila stack = new Pila();
+		/*Act*/
+		stack.agregar(1);
+		stack.agregar(2);
+		boolean correcto = stack.estaVacia();
+		/*Assert*/
+		assertFalse(correcto);
+	}
 
 }
